@@ -31,6 +31,21 @@ app.post('/api/items', (req, res) => {
 });
 
 
+// Actualizamos el estado de una válvula
+app.put('/api/items/:name', (req, res) => {
+    const { name } = req.params;
+    const { state } = req.body;
+
+    const item = datos.lista.find(item => item.name === name);
+    if (item) {
+        item.state = state;
+        console.log(`Estado de ${name} actualizado a ${state}`);
+        res.json(item);
+    } else {
+        res.status(404).json({ error: 'Válvula no encontrada' });
+    }
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

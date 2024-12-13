@@ -3,11 +3,11 @@ import { Check } from './check.js';
 const Cliente = {
     send: (data)=>{
         fetch('http://localhost:3000/api/items', {
-            method: 'POST',
+            method: 'PUT',
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({state:data.state})
           })
             .then(response => {
               if (!response.ok) {
@@ -16,10 +16,10 @@ const Cliente = {
               return response.json();
             })
             .then(data => {
-              console.log('Ítem creado:', data);
+              console.log('Estado Actualizado:', data);
             })
             .catch(error => {
-              console.error('Error al crear el ítem:', error);
+              console.error('Error al actilizar el estado:', error);
             });
           
     }
