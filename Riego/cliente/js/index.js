@@ -3,7 +3,7 @@ import { Check } from './check.js';
 const Cliente = {
     send: (data)=>{
         fetch('http://localhost:3000/api/items', {
-            method: 'PUT',
+            method: 'POST',
             headers: {
               'Content-Type': 'application/json'
             },
@@ -16,10 +16,10 @@ const Cliente = {
               return response.json();
             })
             .then(data => {
-              console.log('Estado Actualizado:', data);
+              console.log('Ítem creado:', data);
             })
             .catch(error => {
-              console.error('Error al actilizar el estado:', error);
+              console.error('Error al crear el ítem:', error);
             });
           
     }
