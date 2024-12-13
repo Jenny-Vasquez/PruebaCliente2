@@ -21,7 +21,6 @@ const Cliente = {
             .catch(error => {
               console.error('Error al crear el ítem:', error);
             });
-          
     }
 }
 
