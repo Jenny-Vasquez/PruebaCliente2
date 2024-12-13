@@ -8,14 +8,14 @@ export class Check {
     changeValue(name, value) {
         const data = this.states.find((item) => item.name == name);
         // hacer algo más.
-        
+
         if (data) {
-            data.state = value; // Actualiza el estado interno
+            data.state = value; // Actualiza el estado para pasar de on a off
             const label = this.parent.querySelector(`label[data-name="${name}"] span`);
             if (label) {
                 label.textContent = value ? 'ON' : 'OFF';
             }
-            // Aquí  se enviarian los datos al servidor si es necesario
+            // Aquí  se enviarian los datos
             this.client.send({ name, state: value });
         }
     }
