@@ -8,6 +8,7 @@ export class Check {
     changeValue(name, value) {
         const data = this.states.find((item) => item.name == name);
         // hacer algo más.
+        
         if (data) {
             data.state = value; // Actualiza el estado interno
             const label = this.parent.querySelector(`label[data-name="${name}"] span`);
@@ -39,7 +40,7 @@ export class Check {
         const text = document.createTextNode('OFF');
         span.appendChild(text);
         check.appendChild(span);
-        
+
         input.addEventListener('change', (event)=> {
             this.changeValue(name, event.target.checked);
         })
