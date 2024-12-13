@@ -9,9 +9,41 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+//En este punto he intentado crear un array que contenga los
+//identificadores de las válvulas asociadas a un grupo, apartir del código aportado
+//pero no me ha dado tiempo a implementarlo 
+
 const datos = {
+    grupos: [
+        {
+            id: "group1",
+            valvulas: ["riego1", "riego2"]
+        },
+        {
+            id: "group2",
+            valvulas: ["riego1", "riego2"]
+        },
+        {
+            id: "group3",
+            valvulas: ["riego1", "riego2"]
+        },
+        {
+            id: "group",
+            valvulas: ["riego1", "riego2"]
+        },
+        {
+            id: "group5",
+            valvulas: ["riego1", "riego2"]
+        },
+        {
+            id: "group6",
+            valvulas: ["riego1", "riego2"]
+        }
+    ],
     lista: []
-}
+};
+
+
 
 // Rutas
 app.get('/', (req, res) => {
